@@ -35,7 +35,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="http://localhost/tcc/app/controllers/cliente1_controller.php?acao=excluir&idCliente=<?= $cliente->id_cliente; ?>">
+                            <a href="http://localhost/tcc/app/controllers/cliente1_controller.php?acao=excluir&idCliente=<?= $cliente->id_cliente; ?>"onclick="return confirm('Confirmar exclusão de registro?');">
                                 <button class="fa fa-trash"></button>
                             </a>
                         </td>
@@ -51,6 +51,7 @@
 
     </div>
 
+        <!-- <a href="excluir.php?id=<?php echo $id; ?>" onclick="return confirm('Confirmar exclusão do registro?');">excluir</a>
 
 
 <?php require_once "rodape.php"; ?>

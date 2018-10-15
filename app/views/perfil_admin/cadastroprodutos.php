@@ -107,7 +107,9 @@
                             </div>
                         </div>
                         <br>
+                        <a href="#"onclick="return confirm('Produto cadastrado com sucesso!');">
                         <button class="ui button" type="submit">Cadastrar</button>
+                        </a>
                 </form>
             </div>
 

@@ -10,7 +10,7 @@
                 </div><br>
 
                 <!--formulario de cadastro -->
-                <form class="ui form" action="../../controllers/admin_controller.php?acao=salvar" method="post">
+                <form class="ui form" action="#" method="post">
 
                     <div class="field">
                         <label><font color="#363636">Nome Completo</font></label>

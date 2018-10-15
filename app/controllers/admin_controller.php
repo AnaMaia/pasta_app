@@ -14,8 +14,9 @@ function perfil_admin(){
 }
 
 function listarAdmin($id){
-    $administrador = new CrudAdministrador();
-    $admin = $administrador->getAdministrador($idAdministrador);
+    $crud = new CrudAdministrador();
+    $admins = $crud->getAdministradores();
+
     include __DIR__."/../views/perfil_admin/visualizarvendedores.php";
 }
 
@@ -23,14 +24,11 @@ function cadastrarAdmin(){
     $crud = new CrudAdministrador();
     include '../views/cadastro_admin.php';
 }
-
 function salvarAdmin(){ //DANDO ERRO
     echo "<pre>";
-
     $usuario = new Administrador($_POST['nome'], $_POST['email'], $_POST['senha'],  $_POST['telefone'], $_POST['razao_social'], $_POST['nome_fantasia'], $_POST['cnpj']);
     $adm = new CrudAdministrador();
     $resultado = $adm->cadastrar($usuario);
-
     header("Location: http://localhost/tcc/app/controllers/produto_controller.php?acao=listar");
 }
 
@@ -44,10 +42,10 @@ function salvarAdmin(){ //DANDO ERRO
     }
 
 function excluirAdmin($id_usuario){
-    $crud = new CrudAdministrador();
-    $crud->excluir($id_usuario);
+   // $crud = new CrudAdministrador();
+    // $crud->excluir($id_usuario);
 
-    header("location: http://localhost/tcc/app/views/login.php") ;
+    //header("location: http://localhost/tcc/app/views/login.php") ;
 }
 //ROTAS
 if (isset($_GET['acao']) && !empty($_GET['acao']) ) {

@@ -14,11 +14,12 @@ function cadastrar(){ //OKAY
 
 function salvar(){ //DANDO ERRO
      echo "<pre>";
-    $origem = $_FILES['imagem']['tmp_name'];
-    $destino = date('dmyhis').$_FILES['imagem']['name'];
-    move_uploaded_file($origem, 'http://localhost/tcc/assets/imagesSalvas/'.$destino);
 
-    $produto = new Produto($_POST['nome'], $_POST['preco'], $_POST['referencia'], $_POST['estoque'],  $_POST['estoqueMin'], $_POST['descricao'],$_POST['tamanho'], $_POST['cor'], $_POST['tipoProduto'], $destino);
+     $origem = $_FILES['imagem']['tmp_name'];
+    $nome_img = date('dmyhis').$_FILES['imagem']['name'];
+    $destino = __DIR__.'/../../assets/imagesSalvas/'.$nome_img;
+    $x = move_uploaded_file($origem, $destino);
+    $produto = new Produto($_POST['nome'], $_POST['preco'], $_POST['referencia'], $_POST['estoque'],  $_POST['estoqueMin'], $_POST['descricao'],$_POST['tamanho'], $_POST['cor'], $_POST['tipoProduto'], $nome_img);
     $crud = new CrudProdutos();
     $resultado = $crud->cadastrar($produto);
     if ($resultado == 1) {
@@ -31,11 +32,10 @@ function listar(){
     session_start();
     $crud = new CrudProdutos();
     $listaProdutos = $crud->getProdutos();
-
-    if ($_SESSION['tipo_user'] = 'vendedor'){
-        require_once __DIR__.'/../views/perfil_vendedor/catalogo.php';
-    }
-    else{
+    $imagens = $crud->getImagens();
+    if($_SESSION['tipo_user'] == 'vendedor'){
+        require __DIR__.'/../views/perfil_vendedor/catalogo.php';
+    }else{
         require_once __DIR__ .'/../views/perfil_admin/catalogo.php';
     }
 
@@ -57,10 +57,9 @@ function excluir($id){ //ATIVAR E DESATIVAR
 }
 
 function detalhar($id){
-    $id = 5;
     $crud = new CrudProdutos();
-    $crud->getProduto($id);
-    require __DIR__.'/../views/perfil_vendedor/informacoesProduto.php';
+    $produto = $crud->getProduto($id);
+    require __DIR__ . '/../views/perfil_admin/informacoesProdutoadmin.php';
 }
 //ROTAS
 if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
@@ -81,7 +80,7 @@ if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
         listar();
 
     } elseif ($_GET['acao'] == 'detalhar') {
-        //detalhar($id);
+        detalhar($_GET['id']);
 
 	} else {
         listar();

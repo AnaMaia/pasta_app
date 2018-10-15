@@ -11,14 +11,13 @@ class CrudAdministrador{
     }
 
     public function cadastrar($usuario){
-
         $sql = "INSERT INTO usuarios (nome, email, senha, telefone) VALUES ('{$usuario->getNome()}', '{$usuario->getEmail()}', '{$usuario->getSenha()}', '{$usuario->getTelefone()}')";
         $this->conexao->exec($sql);
-
         $id = $this->conexao->lastInsertId(); //pega o ultimo id cadastrado
         $sq = "INSERT INTO administrador (razao_social, nome_fantasia, cnpj, id_usuarios) VALUES ('{$usuario->razao_social}', '{$usuario->nome_fantasia}', '{$usuario->cnpj}', '{$id}')";
         $this->conexao->exec($sq);
     }
+
 
     public function getAdministradores(){
         $sql = "select * from administrador";
@@ -46,6 +45,7 @@ class CrudAdministrador{
         $id_administrador = $this->conexao->query("SELECT idAdministrador  FROM administrador WHERE id_usuarios = $id_usuario")->fetch();
         $id_administrador = $id_administrador['idAdministrador'];
 
+
         $this->conexao->exec("DELETE FROM administrador WHERE idAdministrador = $id_administrador");
         $this->conexao->exec("DELETE FROM usuarios WHERE idUsuarios = $id_usuario");
     }
@@ -72,8 +72,8 @@ $crud = new CrudAdministrador();
 
 //$crud->getAdministradores(); //Okay - funcionando
 
-$crud->getAdministrador(16);
+//$crud->getAdministrador(16);
 
 //$crud->cadastrar($adm); //Okay - funcionando
 
-//$crud->excluir(1); //Okay - funcionando
+$crud->excluir(4); //Okay - funcionando

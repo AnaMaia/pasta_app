@@ -44,6 +44,6 @@ class CrudUsuario{
     }
 }
 
-$bls = new CrudUsuario();
+//$bls = new CrudUsuario();
 //$bls->getUsuarios();
-$bls->getUsuario(5);
+//$bls->getUsuario(5);

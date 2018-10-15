@@ -5,7 +5,7 @@
 <div id="page-wrapper">
     <div id="page-inner" class="container">
 
-        <a class="btn btn-danger" style="background-color: #ba2a1d" href="http://localhost/tcc/app/controllers/vend_controller.php?acao=excluir&id_usuario=<?= $_SESSION['id_user'];?>">Excluir conta</a>
+        <a class="btn btn-danger" style="background-color: #ba2a1d" href="http://localhost/tcc/app/controllers/vend_controller.php?acao=excluir&id_usuario=<?= $_SESSION['id_user'];?>"onclick="return confirm('Tem certeza que deseja excluir sua conta?');">Excluir conta</a>
         <a class="btn btn-primary" href="editar_vendedor.php"><i class="fa fa-edit "></i> Editar</a>
 
         <!-- Page Content -->

@@ -74,3 +74,13 @@ switch ($acao){
     default: //CASO NÃO SEJA NENHUM DOS ANTERIORES
         echo "Invalid action";
 }
+
+
+
+
+
+
+
+
+
+

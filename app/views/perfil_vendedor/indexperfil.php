@@ -1,4 +1,4 @@
-<?= @session_start(); ?>
+<?php @session_start(); ?>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,9 +27,6 @@
 
 
     <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-        <span id="tamanhoicones">
-        <a href="notificaçoes.php" class="glyphicon glyphicon-bell" aria-hidden="true"></a>
-            </span>
 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -52,23 +49,17 @@ font-size: 16px;"><a href="http://localhost/tcc/app/crud/login/closed.php" class
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li class="text-center">
-                    <img src="http://localhost/tcc/assets/img/find_user.png" class="user-image img-responsive"/>
+                    <img src="../../../assets/images/logo%20Estoque.png" class="user-image img-responsive"/>
                 </li>
 
 
                 <li>
-                    <a class="active-menu"  href="http://localhost/tcc/app/controllers/produto_controller.php?acao=listarVend"><i class="fa fa-desktop fa-3x"></i>Catálogo</a>
+                    <a class="active-menu"  href="http://localhost/tcc/app/controllers/produto_controller.php?acao=listarVend"><i class="fa fa-desktop fa-3x"></i>Catálogo vendedor</a>
                 </li>
                 <li>
                     <a href="http://localhost/tcc/app/views/perfil_vendedor/informacoesperfil.php"><i class="glyphicon glyphicon-user fa-3x" style="margin-right: 10px" aria-hidden="true"></i>Perfil</a>
                 </li>
-                <li>
-                    <a href="http://localhost/tcc/app/views/perfil_vendedor/visualizarpedidos.php"><i class="glyphicon glyphicon-eye-open fa-3x" aria-hidden="true"></i>Histórico</a>
 
-                </li>
-                <li>
-                    <a href="http://localhost/tcc/app/views/perfil_vendedor/carrinho.php"><i class="glyphicon glyphicon-shopping-cart" style="font-size: 3em" aria-hidden="true"></i>Carrinho</a>
-                </li>
 
             </ul>
 

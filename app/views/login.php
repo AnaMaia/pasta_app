@@ -91,7 +91,7 @@ unset($_SESSION['id_user'], $_SESSION['nome']);
         <div class="ui middle aligned center aligned grid">
             <div class="column">
                 <h2 class="ui teal image header">
-                    <img src="../../assets/images/logo.png" class="image">
+                    <img src="../../assets/images/logo%20Estoque.png" class="image" style="width: 200px;" >
                     <div class="content">
                         <!--loguinho-->
                     </div>

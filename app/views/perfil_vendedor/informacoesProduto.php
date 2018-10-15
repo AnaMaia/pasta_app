@@ -1,12 +1,9 @@
 <?php require_once "indexperfil.php"; ?>
 
-
 <div id="page-wrapper">
     <!-- Page Content -->
 
     <div id="page-inner" class="container">
-
-        <?php foreach($produtos as $produto): ?>
 
         <div class="row">
 
@@ -24,32 +21,47 @@
 
 
                 </div>
+
+
+
+
             </div>
 
             <div class="col-md-5" style="background: rgba(173, 216, 230, 0.55);">
 
-                    <h2 style="color: #0a256a; margin-top: 20px">COLETE JEANS MARMORIZADO</h2>
-                    <h3>Referência: 53427</h3>
-                    <h3 style="color: #0A0A0A">Preço: R$29,90</h3>
-                    <h3 style="color: #0a256a">*Tamanho:</h3>
-                    <select name="select" class="estiloselect">
-                        <option value="valor1">P</option>
-                        <option value="valor2" selected>M</option>
-                        <option value="valor3">G</option>
-                    </select>
+                    <h2 style="color: #0a256a; margin-top: 20px"><?= $produto->nome; ?></h2>
+                    <h3>Referência: <?= $produto->referencia; ?></h3>
+                    <h3 style="color: #0A0A0A">Preço:<?= $produto->preco; ?></h3>
+                    <h3 style="color: #0a256a">Tamanho:</h3>
+                <div><h4><?= $produto->tamanho; ?></h4></div>
 
-                    <h3 style="color: #0a256a">*Cor:</h3>
-                    <select name="select" class="estiloselect">
-                        <option value="valor1">amarelo</option>
-                        <option value="valor2" selected>verde</option>
-                        <option value="valor3">vermelho</option>
-                    </select>
-                    <h3 style="color: #0a256a">*Quantidade:</h3>
-                    <input type="number" style="size: 130px; width: 111px; margin-right: 300px" class="estiloselect">
-                    <button id="botaovenda" class="ui button" onclick="alert('Seja bem vindo(a) ao Linha de Código.')"type="submit">Vender<i class="shop icon float right"></i></button>
+                <h3 style="color: #0a256a">Cor:</h3>
+                <div><h4><?= $produto->cor; ?></h4></div>
+                    <h3 style="color: #0a256a">Quantidade:</h3>
+                <div><h4><?= $produto->quantidade; ?></h4></div>
+                <br><br>
+
+
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+
+
+
             </div>
+
         </div>
+
+
     </div>
+
+
+
+    <!-- /. PAGE WRAPPER  -->
 </div>
-    
+
 <?php require_once "rodape.php"; ?>

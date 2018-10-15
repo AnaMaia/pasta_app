@@ -26,9 +26,7 @@
 <div id="wrapper">
 
     <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-        <span id="tamanhoicones">
-        <a href="http://localhost/tcc/app/views/perfil_admin/notificaçoes.php" class="glyphicon glyphicon-bell" style="margin-top: 18px" aria-hidden="true"></a>
-            </span>
+
 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -51,15 +49,15 @@ font-size: 16px;"><a href="http://localhost/tcc/app/crud/login/closed.php" class
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li class="text-center">
-                    <img src="http://localhost/tcc/assets/img/find_user.png" class="user-image img-responsive"/>
+                    <img src="../../../assets/images/logo%20Estoque.png" class="user-image img-responsive"/>
                 </li>
 
 
                 <li>
-                    <a class="active-menu"  href="http://localhost/tcc/app/controllers/admin_controller.php?acao=listarAdmin&idAdministrador=<?= $administrador->idAdministrador; ?>"><i class="fa fa-desktop fa-3x"></i>Catálogo</a>
+                    <a class="active-menu"  href="http://localhost/tcc/app/controllers/produto_controller.php?acao=listar"><i class="fa fa-desktop fa-3x"></i>Catálogo</a>
                 </li>
                 <li>
-                    <a href="http://localhost/tcc/app/views/perfil_admin/informacoesperfil.php"><i class="glyphicon glyphicon-user fa-3x" style="margin-right: 10px" aria-hidden="true"></i>Perfil</a>
+                    <a href="http://localhost/tcc/app/controllers/admin_controller.php?acao=listarAdmin&id_"><i class="glyphicon glyphicon-user fa-3x" style="margin-right: 10px" aria-hidden="true"></i>Perfil</a>
                 </li>
 
                 <li>
